@@ -10,7 +10,7 @@
     "ports": [
       "80/tcp"
     ],
-    "volumes": ["/dokuwiki/lib/plugins,/dokuwiki/data,/dokuwiki/conf,/dokuwiki/lib/tpl,/var/log"]
+    "volumes": ["/dokuwiki/lib/plugins","/dokuwiki/data","/dokuwiki/conf","/dokuwiki/lib/tpl","/var/log"]
   },  
   {
     "type": "container",
