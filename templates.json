@@ -1,4 +1,17 @@
-[
+[  
+  {
+    "type": "container",
+    "title": "Dokuwiki",
+    "description": "A simple to use and highly versatile Open Source wiki software that doesn't require a database.",
+    "categories": ["CMS"],
+    "platform": "linux",
+    "logo": "https://www.dokuwiki.org/lib/tpl/dokuwiki/images/logo.png",
+    "image": "xtremxpert/rpi-dokuwiki",
+    "ports": [
+      "80/tcp"
+    ],
+    "volumes": ["/dokuwiki/lib/plugins,/dokuwiki/data,/dokuwiki/conf,/dokuwiki/lib/tpl,/var/log"]
+  },  
   {
     "type": "container",
     "title": "Registry",
