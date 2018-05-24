@@ -1,4 +1,17 @@
 [  
+    {
+    "type": "container",
+    "title": "Nextcloud",
+    "description": "A safe home for all your data. Access & share your files, calendars, contacts, mail & more from any device, on your terms.",
+    "categories": ["CMS"],
+    "platform": "linux",
+    "logo": "https://upload.wikimedia.org/wikipedia/commons/thumb/6/60/Nextcloud_Logo.svg/1200px-Nextcloud_Logo.svg.png",
+    "image": "arm32v7/nextcloud",
+    "ports": [
+      "80/tcp"
+    ],
+    "volumes": ["/var/www/data"]
+  },  
   {
     "type": "container",
     "title": "Dokuwiki",
