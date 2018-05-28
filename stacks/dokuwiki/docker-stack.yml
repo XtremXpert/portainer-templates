@@ -1,0 +1,19 @@
+version: '3.2'
+
+services:
+   dokuwiki:
+     image: xtremxpert/rpi-dokuwiki
+     ports:
+       - 80
+     volumes:
+       - plugins:/dokuwiki/lib/plugins
+       - data:/dokuwiki/data
+       - conf:/dokuwiki/conf
+       - tpl:/dokuwiki/lib/tpl,/var/log
+     restart: always
+
+volumes:
+  - plugins:
+  - data:
+  - conf
+  - tpl
