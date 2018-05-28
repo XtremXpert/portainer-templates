@@ -1,5 +1,31 @@
 [  
     {
+    "type": "stack",
+    "title": "Nextcloud",
+    "description": "A safe home for all your data. Access & share your files, calendars, contacts, mail & more from any device, on your terms.",
+    "note": "Deploys a NextCloud instance connected to a Postgres database.",
+    "categories": ["CMS"],
+    "platform": "linux",
+    "logo": "https://upload.wikimedia.org/wikipedia/commons/thumb/6/60/Nextcloud_Logo.svg/1200px-Nextcloud_Logo.svg.png",
+    "repository": {
+      "url": "https://github.com/XtremXpert/portainer-templates",
+      "stackfile": "stacks/nextcloud/docker-stack.yml"
+    },
+    "env": [
+      {
+        "name": "POSTGRES_ROOT_PASSWORD",
+        "label": "Database root password",
+        "description": "Password used by the Postgres root user."
+      },
+      {
+        "name": "POSTGRES_ROOT_USER",
+        "label": "Database root username",
+        "description": "Username for Postgres root user."
+      }
+    ]
+  },
+    
+    {
     "type": "container",
     "title": "Nextcloud",
     "description": "A safe home for all your data. Access & share your files, calendars, contacts, mail & more from any device, on your terms.",
