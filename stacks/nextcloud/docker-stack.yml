@@ -1,0 +1,25 @@
+version: '3'
+
+services:
+
+  nextcloud:
+    image: arm32v7/nextcloud:13
+    links:
+      - "postgres:db"
+    volumes:
+      - nextcloud-data:/var/www/html
+    ports:
+      - "8003:80"
+
+  postgres:
+    image: arm32v7/postgres
+    volumes:
+      - nextcloud-pgsql:/var/lib/postgresql/data
+    environment:
+      POSTGRES_PASSWORD: nextcloud
+      POSTGRES_USER: nextcloud
+    restart: always
+
+volumes:
+  nextcloud-data:
+  nextcloud-pgsql:
