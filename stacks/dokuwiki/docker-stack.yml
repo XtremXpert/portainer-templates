@@ -13,7 +13,7 @@ services:
      restart: always
 
 volumes:
-  - plugins:
-  - data:
-  - conf
-  - tpl
+  plugins:
+  data:
+  conf:
+  tpl:
