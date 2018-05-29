@@ -1,6 +1,37 @@
 [
   {
     "type": "stack",
+    "title": "AutomatedProxy",
+    "description": "Automated proxy including Nginx/DockerGen/LetsEncrypt using Cloudflare DNS.",
+    "note": "Deploys a 3 containter: Nginx, DockerGen and LetsEcrypt companion.",
+    "categories": ["NETWORK"],
+    "platform": "linux",
+    "logo": "https://www.damienflandrin.fr/storage/letsencryptnginx/banner-letsencryptnginx.png",
+    "repository":
+      {
+      "url": "https://github.com/XtremXpert/portainer-templates",
+      "stackfile": "stacks/automated-proxy/docker-stack.yml"
+      },
+    "env": [
+      {
+        "name": "LE_EMAIL",
+        "label": "Recovery Email for Lets Encrypt",
+        "description": "Your email address used to recover certificates."
+      },
+      {
+        "name": "CF_EMAIL",
+        "label": "Cloudflare Email account",
+        "description": "Your email address used to log in cloudflare."
+      },
+      {
+        "name": "CF_APIKEY",
+        "label": "Cloudflare API Key for your account",
+        "description": "Your API Key to autorised DNS modifications in clondflare."
+      },
+    ]
+  },
+  {
+    "type": "stack",
     "title": "Nextcloud",
     "description": "A safe home for all your data. Access & share your files, calendars, contacts, mail & more from any device, on your terms.",
     "note": "Deploys a NextCloud instance connected to a Postgres database.",
