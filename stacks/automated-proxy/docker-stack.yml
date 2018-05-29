@@ -13,7 +13,7 @@ services:
 
   docker-gen:
     image: xtremxpert/rpi-docker-gen
-    volume_from:
+    volumes_from:
       - nginx
     volumes:
       - /var/run/docker.sock:/tmp/docker.sock:ro
