@@ -12,7 +12,7 @@ services:
       - tpl:/dokuwiki/lib/tpl,/var/log
     restart: always
     environnement:
-      - VIRTUAL_HOST=$(VIRTUAL_HOST)       
+      VIRTUAL_HOST: ${VIRTUAL_HOST}
 
 volumes:
   plugins:
