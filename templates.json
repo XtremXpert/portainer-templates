@@ -24,5 +24,29 @@
         "description": "Username for Postgres root user."
       }
     ]
+  },
+
+  {
+    "type": "stack",
+    "title": "Dokuwiki",
+    "description": "DokuWiki is a simple to use and highly versatile Open Source wiki software that doesn't require a database. It is loved by users for its clean and readable syntax.",
+    "note": "Deploys a Dokuwiki instance.",
+    "categories": ["CMS"],
+    "platform": "linux",
+    "logo": "https://www.dokuwiki.org/lib/tpl/dokuwiki/images/logo.png",
+    "repository":
+      {
+      "url": "https://github.com/XtremXpert/portainer-templates",
+      "stackfile": "stacks/dokuwiki/docker-stack.yml"
+      },
+    "env": [
+      {
+        "name": "VIRTUAL_HOST",
+        "label": "Virtual Host name",
+        "description": "Host name use to reach that service."
+      }
+    ]
   }
+
+
 ]
