@@ -1,5 +1,5 @@
-[  
-    {
+[
+  {
     "type": "stack",
     "title": "Nextcloud",
     "description": "A safe home for all your data. Access & share your files, calendars, contacts, mail & more from any device, on your terms.",
@@ -7,10 +7,11 @@
     "categories": ["CMS"],
     "platform": "linux",
     "logo": "https://upload.wikimedia.org/wikipedia/commons/thumb/6/60/Nextcloud_Logo.svg/1200px-Nextcloud_Logo.svg.png",
-    "repository": {
+    "repository":
+      {
       "url": "https://github.com/XtremXpert/portainer-templates",
       "stackfile": "stacks/nextcloud/docker-stack.yml"
-    },
+      },
     "env": [
       {
         "name": "POSTGRES_PASSWORD",
@@ -23,6 +24,5 @@
         "description": "Username for Postgres root user."
       }
     ]
-  }, 
-
+  }
 ]
