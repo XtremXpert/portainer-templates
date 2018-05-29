@@ -40,7 +40,7 @@
       },
     "env": [
       {
-        "name": "VIRTUAL_HOST",
+        "name": "VIRTUAL_HOST_NAME",
         "label": "Virtual Host name",
         "description": "Host name use to reach that service."
       }

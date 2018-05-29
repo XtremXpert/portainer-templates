@@ -9,10 +9,10 @@ services:
       - plugins:/dokuwiki/lib/plugins
       - data:/dokuwiki/data
       - conf:/dokuwiki/conf
-      - tpl:/dokuwiki/lib/tpl,/var/log
+      - tpl:/dokuwiki/lib/tpl
     restart: always
     environnement:
-      VIRTUAL_HOST: ${VIRTUAL_HOST}
+      VIRTUAL_HOST: $VIRTUAL_HOST_NAME
 
 volumes:
   plugins:
