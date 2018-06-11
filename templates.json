@@ -45,6 +45,42 @@
         "description": "Host name use to reach that service."
       }
     ]
+  },
+  {
+    "type": "stack",
+    "title": "Wordpress",
+    "description": "WordPress.com powers beautiful websites for businesses, professionals, and bloggers.",
+    "note": "Deploys a Wordpress instance.",
+    "categories": ["CMS"],
+    "platform": "linux",
+    "logo": "https://www.cmic.ch/wp-content/uploads/2010/04/xwordpress-logo-stacked-rgb.png.pagespeed.ic.UDltoZTz3o.png",
+    "repository":
+      {
+      "url": "https://github.com/XtremXpert/portainer-templates",
+      "stackfile": "stacks/wordpress/docker-stack.yml"
+      },
+    "env": [
+      {
+        "name": "TRAEFIK_HOSTNAME",
+        "label": "Virtual Host name",
+        "description": "Host name use to reach that service."
+      },
+      {
+        "name": "TRAEFIK_BACKEND",
+        "label": "Backend identification name",
+        "description": "Unique name used by traefik to identify that service."
+      },
+      {
+        "name": "MYSQL_DATABASE_ROOT_PASSWORD",
+        "label": "Database user",
+        "description": "User name to use to connect to the database."
+      },
+      {
+        "name": "MYSQL_DATABASE_PASSWORD",
+        "label": "Database user password",
+        "description": "Password for the database user."
+      }
+    ]
   }
 
 ]

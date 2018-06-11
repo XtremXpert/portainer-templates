@@ -1,26 +1,49 @@
-version: '3'
+version: '3.4'
 
 services:
    db:
      image: mysql:5.7
      volumes:
        - db_data:/var/lib/mysql
-     restart: always
      environment:
-       MYSQL_ROOT_PASSWORD: ${MYSQL_DATABASE_PASSWORD}
+       MYSQL_ROOT_PASSWORD: ${MYSQL_DATABASE_ROOT_PASSWORD}
        MYSQL_DATABASE: wordpress
        MYSQL_USER: wordpress
-       MYSQL_PASSWORD: wordpress
+       MYSQL_PASSWORD: ${MYSQL_DATABASE_PASSWORD}
+     networks:
+       - ${TRAEFIK_BACKEND}_network
+     deploy:
+      labels:
+        - "traefik.enable=false"
 
    wordpress:
      image: wordpress:latest
      ports:
        - 80
-     restart: always
+     volumes:
+       - wp_data:/var/www/html
      environment:
        WORDPRESS_DB_HOST: db:3306
        WORDPRESS_DB_USER: wordpress
-       WORDPRESS_DB_PASSWORD: wordpress
+       WORDPRESS_DB_PASSWORD: ${MYSQL_DATABASE_PASSWORD}
+     networks:
+       - ${TRAEFIK_BACKEND}_network
+       - proxied
+     deploy:
+      labels:
+        - "traefik.docker.network=proxied"
+        - "traefik.backend=wordpress"
+        - "traefik.frontend.rule=Host:${TRAEFIK_HOSTNAME}"
+        - "traefik.port=80"
 
 volumes:
     db_data:
+    wp_data:
+
+networks:
+  proxied:
+    external:
+      name: proxied
+
+  ${TRAEFIK_BACKEND}_network:
+    driver: overlay
