@@ -72,13 +72,13 @@
       },
       {
         "name": "MYSQL_DATABASE_ROOT_PASSWORD",
-        "label": "Database user",
-        "description": "User name to use to connect to the database."
+        "label": "Database root password",
+        "description": "Password for the database user root."
       },
       {
         "name": "MYSQL_DATABASE_PASSWORD",
-        "label": "Database user password",
-        "description": "Password for the database user."
+        "label": "Database word press password",
+        "description": "Password for the database user wordpress."
       }
     ]
   }
