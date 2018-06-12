@@ -45,5 +45,5 @@ networks:
     external:
       name: proxied
 
-  ${TRAEFIK_BACKEND}_network:
+  wordpress_network:
     driver: overlay
